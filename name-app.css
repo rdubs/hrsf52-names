@@ -1,0 +1,13 @@
+
+#pic-plus-input-container {
+  width:50%; 
+  height:50%;
+  margin:auto auto;
+  border-style: dashed;
+  text-align: center;
+}
+
+#guess {
+  display: block;
+  margin: auto;
+}

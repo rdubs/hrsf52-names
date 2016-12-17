@@ -5,6 +5,16 @@ var cohort = [
 		img: 'assets/Cynthia.png'
 	},
 	{
+		first: 'Adam',
+		last: 'Watt',
+		img: 'assets/Adam.png'
+	},
+	{
+		first:'Chike',
+		last:'Onuorah',
+		img: 'assets/Chike.png'
+	},
+	{
 		first: 'Stephen',
 		last: 'Chan',
 		img: 'assets/Stephen.png'
@@ -27,13 +37,13 @@ var cohort = [
 	{
 		first: 'Saivickna',
 		last: 'Raveendran',
-		img: 'assets/Sai.png',
+		img: 'assets/Saivickna.png',
 		nickname: 'Sai'
 	},
 	{
 		first: 'Jasmine',
 		last: 'Mina',
-		img: 'assets/Jasmine.png'
+		img: 'assets/Jasmine.png',
 		nickname: 'Jmina',
 		pronunciation: '(jay-me-nuh)'
 	},
@@ -80,7 +90,7 @@ var cohort = [
 	{
 		first: 'Michael',
 		last: 'Merrill',
-		img: 'assets/Michael.png' //DUP?
+		img: 'assets/Michael-Merrill.png' //DUP?
 	},
 	{
 		first: 'Nathan',
@@ -90,7 +100,8 @@ var cohort = [
 	{
 		first: 'Hansheng',
 		last: 'Zhao',
-		img: 'assets/Han.png'
+		img: 'assets/Han.png',
+		nickname: 'Han'
 	},
 	{
 		first: 'Bianca',
@@ -127,7 +138,8 @@ var cohort = [
 		first: 'Ramsha',
 		last: 'Mushtaq',
 		img: 'assets/Ramsha.png',
-		pronunciation: 'Rumsha'
+		pronunciation: 'Rumsha',
+		nickname: 'Rumsha'
 	},
 	{
 		first: 'Richard',
@@ -152,7 +164,7 @@ var cohort = [
 	{
 		first: 'Andrew',
 		last: 'Hsu',
-		img: 'assets/Andrew.png'
+		img: 'assets/Andrew-Hsu.png'
 	},
 	{
 		first: 'Jimothy',
