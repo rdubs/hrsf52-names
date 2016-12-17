@@ -1,13 +1,56 @@
 
 #pic-plus-input-container {
-  width:50%; 
+  /*width:50%; 
   height:50%;
-  margin:auto auto;
-  border-style: dashed;
+  margin:auto auto;*/
   text-align: center;
+  border-style: dotted;
+  display: inline-block;
+  vertical-align: top;
 }
 
 #guess {
   display: block;
   margin: auto;
+}
+
+#choices-table {
+  /*float:left;*/
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 50px;
+}
+
+#table-header {
+  font-weight: bold;
+}
+
+#bio-container {
+  /*float: right;*/
+  visibility: hidden; 
+  margin-right: 50px;
+  text-align: center;
+  /*border-style: dotted;*/
+  display: inline-block;
+  vertical-align: top;
+}
+
+.stretch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
+}
+
+#title {
+  /*font-size: 25;*/
+  text-align: center;
+  margin-right: 200px;
+  /*border-style: dotted;*/
+}
+body {
+  text-align: justify;
+  -ms-text-justify: distribute-all-lines;
+  text-justify: distribute-all-lines;
 }

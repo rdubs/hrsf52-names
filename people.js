@@ -10,6 +10,11 @@ var cohort = [
 		img: 'assets/Adam.png'
 	},
 	{
+		first: 'Ranit',
+		last: 'Dubey',
+		img: 'assets/Ranit.png'
+	},
+	{
 		first:'Chike',
 		last:'Onuorah',
 		img: 'assets/Chike.png'
@@ -27,7 +32,7 @@ var cohort = [
 	{
 		first: 'Kevin',
 		last: 'Gin',
-		img: 'assets/Kevin.png' //DUP?
+		img: 'assets/Kevin.png'
 	},
 	{
 		first: 'Joey',
@@ -50,7 +55,13 @@ var cohort = [
 	{
 		first: 'Michael',
 		last: 'Tutt',
-		img: 'assets/Michael.png' //dup?
+		img: 'assets/Michael.png'
+	},
+	{
+		first: 'Michael',
+		last: 'Comes',
+		img: 'assets/Michael-Comes.png',
+		nickname: 'Mike'
 	},
 	{
 		first: 'Fred',
@@ -65,7 +76,8 @@ var cohort = [
 	{
 		first: 'Jeffrey',
 		last: 'Villarina',
-		img: 'assets/Jeffrey.png'
+		img: 'assets/Jeffrey.png',
+		nickname: 'Jeff'
 	},
 	{
 		first: 'Sunnie',
@@ -90,7 +102,7 @@ var cohort = [
 	{
 		first: 'Michael',
 		last: 'Merrill',
-		img: 'assets/Michael-Merrill.png' //DUP?
+		img: 'assets/Michael-Merrill.png'
 	},
 	{
 		first: 'Nathan',

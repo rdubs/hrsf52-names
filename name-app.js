@@ -1,42 +1,77 @@
 // A $( document ).ready() block.
-
 $( document ).ready(function() {
   var personObject = setNewPerson();
   var correctPerson = 0;
   var incorrectPerson = 0;
   var total = cohort.length;
+  var remaining = {};
+  // _.each(cohort, function(person) {
+  //   remaining[person.first.toLowerCase() + person.last.toLowerCase()] = person.first + ' ' + person.last;
+  // });
+  // for (var x in remaining) {
+  //   $('#choices-table tr:last').after('<tr id="' + x + '"><td>' + remaining[x] + '</td></tr>');
+  // }
+  populateChoiceList();
+  $('#guess-button').on('click', function () {
+    checkPerson();
+  });
   
-  $('#guess-button').on('click', checkPerson);
-  
+  $('#dunno-button').on('click', function() {
+    wrongGuess();
+  });
+
   $("#guess").on('keyup', function (e) {
     if (e.keyCode == 13) {
       checkPerson();
     }
   });
 
+  var wrongGuess = function() {
+    incorrectPerson++;
+    $('#bio-container').css('visibility', 'visible');
+    $('#name').text(personObject.first + ' ' + personObject.last + (personObject.nickname ? ' (' + personObject.nickname + ')' : ''));
+
+    $('#guess').val('');
+  };
+
+
   var checkPerson = function () {
     var guessobj = $('#guess');
     var guess = $('#guess').val().toLowerCase();
     var firstName = personObject.first.toLowerCase();
-    if (guess === firstName || guess === firstName + ' ' + personObject.last.toLowerCase() || guess === personObject.nickname.toLowerCase()) {
+    var lastName = personObject.last.toLowerCase();
+    if (guess === firstName || guess === firstName + ' ' + lastName || (personObject.nickname && guess === personObject.nickname.toLowerCase())) {
       //alert('Correct');
       correctPerson++;
+      personObject.visited = true;
+      var key = firstName + lastName;
+      delete remaining[key];
+      $('#' + key).remove();
     } else {
-      incorrectPerson++;
+      wrongGuess();
+      return;
       //alert('Incorrect');
     }
 
-    if (correctPerson+incorrectPerson === total) {
-      alert('You got :' + correctPerson + '/' + total);
+    if (Object.keys(remaining).length === 0) {
+      alert('You made: ' + incorrectPerson + ' mistakes.');
       for (var x = 0; x < cohort.length; x++) {
         cohort[x].visited = false;
       }
+      populateChoiceList();
     } 
     personObject = setNewPerson();
     guessobj.val('');
 
+  };
+  function populateChoiceList(){
+    _.each(cohort, function(person) {
+      remaining[person.first.toLowerCase() + person.last.toLowerCase()] = person.first + ' ' + person.last;
+    });
+    for (var x in remaining) {
+      $('#choices-table tr:last').after('<tr id="' + x + '"><td>' + remaining[x] + '</td></tr>');
+    }
   }
-  
   function calculateAspectRatioFit(srcWidth, srcHeight, maxWidth, maxHeight) {
 
       var ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
@@ -44,13 +79,13 @@ $( document ).ready(function() {
       return { width: srcWidth*ratio, height: srcHeight*ratio };
   }
   function setNewPerson () {
-  
+   $('#bio-container').css('visibility', 'hidden');
    var personObject = cohort[Math.floor(Math.random() * cohort.length)];
    while(personObject.visited) {
      personObject = cohort[Math.floor(Math.random() * cohort.length)];
    }
    
-   personObject.visited = true;
+   //personObject.visited = true;
    var img = $('#person');
    img.width('100%');
    img.height('100%');
