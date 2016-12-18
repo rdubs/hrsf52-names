@@ -30,6 +30,11 @@ var cohort = [
 		img: 'assets/Derrick.png'
 	},
 	{
+		first: 'Joey',
+		last: 'Lee',
+		img: 'assets/Joey-Lee.png'
+	},
+	{
 		first: 'Kevin',
 		last: 'Gin',
 		img: 'assets/Kevin.png'

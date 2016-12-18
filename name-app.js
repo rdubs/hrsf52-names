@@ -1,4 +1,10 @@
-// A $( document ).ready() block.
+
+//pre cache images
+
+_.each(cohort, function(person) {
+  var img = new Image();
+  img.src = person.img;
+});
 $( document ).ready(function() {
   var personObject = setNewPerson();
   var correctPerson = 0;
@@ -54,7 +60,7 @@ $( document ).ready(function() {
     }
 
     if (Object.keys(remaining).length === 0) {
-      alert('You made: ' + incorrectPerson + ' mistakes.');
+      alert('Good job! Now try again.');
       for (var x = 0; x < cohort.length; x++) {
         cohort[x].visited = false;
       }
